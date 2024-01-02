@@ -12,7 +12,7 @@ const Social = () => {
         size={'lg'}
         onClick={() => {}}
         >
-            <FcGoogle />
+            <FcGoogle className="h-6 w-6" />
         </Button>
         <Button
         variant={'outline'}
@@ -20,7 +20,7 @@ const Social = () => {
         size={'lg'}
         onClick={() => {}}
         >
-            <FaGithub />
+            <FaGithub className="h-6 w-6" />
         </Button>
     </div>
   )
