@@ -28,8 +28,8 @@ const LoginForm = () => {
     const onSubmit = (data : z.infer<typeof LoginSchema>) => {
         startTransition(() => {
             login(data).then(data => {
-                setError(data.error)
-                setSuccess(data.success)
+                setError(data.error!)
+                setSuccess(data.success!)
             })
         })
         
@@ -91,7 +91,7 @@ const LoginForm = () => {
                     </div>
                     <FormError message={error} />
                     <FormSuccess message={success} />
-                    <Button className='w-full'  size={'lg'} variant={'ghost'} disabled={isPending} >
+                    <Button className='w-full'  size={'lg'} disabled={isPending} >
                         {isPending ? (<Loader2 className=' h-4 w-4 animate-spin' />): 'Login'}
                     </Button>
                 </form>

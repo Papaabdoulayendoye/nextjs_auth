@@ -12,10 +12,8 @@ import { Eye,EyeOff, Loader2 } from 'lucide-react'
 import FormError from '../FormError'
 import FormSuccess from '../FormSuccess'
 import { register } from '@/actions/register'
-import { useRouter } from 'next/navigation'
 
 const RegisterForm = () => {
-    const router = useRouter()
     const [error,setError] = useState<string | undefined>()
     const [success,setSuccess] = useState<string | undefined>()
     const [showPDW,setshowPDW] = useState<boolean>(false)
@@ -36,7 +34,6 @@ const RegisterForm = () => {
                 setSuccess(data.success)
             })
         })
-        // router.push('/auth/login')
     }
     return (
         <CardWrapper 
@@ -113,7 +110,7 @@ const RegisterForm = () => {
                     </div>
                     <FormError message={error} />
                     <FormSuccess message={success} />
-                    <Button className='w-full'  size={'lg'} variant={'ghost'} disabled={isPending} >
+                    <Button className='w-full'  size={'lg'} disabled={isPending} >
                         {isPending ? (<Loader2 className=' h-4 w-4 animate-spin' />): 'Register'}
                     </Button>
                 </form>
